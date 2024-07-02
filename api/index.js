@@ -3,6 +3,8 @@ import dotenv from "dotenv"
 import mongoose from "mongoose";
 import authRouter from "./routes/auth.js"
 import hotelRouter from "./routes/hotels.js"
+import cookieParser from "cookie-parser"
+
 dotenv.config();
 
 const app = express();
@@ -24,6 +26,8 @@ app.get('/',(req,res)=>{
 
 
 //middleware
+
+app.use(cookieParser())
 
 app.use(express.json());
 
